@@ -1,6 +1,6 @@
 {
   "name": "@fermindi/retro-style",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Retro/vintage design system inspired by classic computing hardware",
   "publishConfig": {
     "access": "public"
