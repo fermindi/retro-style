@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "Retro/vintage design system inspired by classic computing hardware",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "repository": {
     "type": "git",
