@@ -30,11 +30,13 @@ jobs:
         run: pnpm --filter @fermindi/retro-ui build
 
       - name: Publish tokens
-        run: pnpm --filter @fermindi/retro-tokens publish --access public --no-git-checks
+        working-directory: packages/tokens
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Publish UI
-        run: pnpm --filter @fermindi/retro-ui publish --access public --no-git-checks
+        working-directory: packages/ui
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
