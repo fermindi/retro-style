@@ -7,7 +7,19 @@
       "Bash(git push:*)",
       "Bash(gh release create:*)",
       "Bash(gh run:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(pnpm install:*)",
+      "Bash(node build.js:*)",
+      "Bash(pnpm build:*)",
+      "Bash(npx tsup)",
+      "Bash(npm publish:*)",
+      "Bash(npm view:*)",
+      "Bash(npm whoami:*)",
+      "Bash(npm pack:*)",
+      "Bash(npm --version:*)",
+      "Bash(echo:*)",
+      "Bash(curl:*)",
+      "Bash(npm config get:*)"
     ]
   }
 }

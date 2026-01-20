@@ -1,4 +1,4 @@
-# Publish package to npm when a release is created
+# Publish packages to npm when a release is created
 
 name: Publish to npm
 
@@ -11,10 +11,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: npm publish
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build tokens
+        run: pnpm --filter @fermindi/retro-tokens build
+
+      - name: Build UI
+        run: pnpm --filter @fermindi/retro-ui build
+
+      - name: Publish tokens
+        run: pnpm --filter @fermindi/retro-tokens publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
+      - name: Publish UI
+        run: pnpm --filter @fermindi/retro-ui publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
