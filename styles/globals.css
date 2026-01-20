@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 15% 92%;
+    --foreground: 0 0% 35%;
+    --border: 0 0% 65%;
+    --input: 38 20% 85%;
+    --ring: 0 0% 65%;
+    --primary: 0 0% 60%;
+    --primary-foreground: 0 0% 35%;
+    --muted: 0 0% 75%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 30%;
+    --accent-foreground: 40 15% 92%;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+
+  input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  button {
+    cursor: pointer;
+    padding: 2px 8px;
+    background: hsl(38 18% 78%);
+    color: hsl(0 0% 35%);
+  }
+
+  button:hover {
+    background: hsl(0 0% 68%);
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  input, textarea {
+    padding: 2px 4px;
+  }
+
+  input:focus, textarea:focus {
+    outline: 1px solid hsl(var(--foreground));
+    outline-offset: -1px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  ::selection {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+}

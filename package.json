@@ -1,0 +1,27 @@
+{
+  "name": "@fermindi/retro-style",
+  "version": "0.1.0",
+  "description": "Retro/vintage design system inspired by classic computing hardware",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fermindi/retro-style.git"
+  },
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "styles",
+    "tailwind.config.js",
+    "index.js",
+    "index.d.ts"
+  ],
+  "exports": {
+    "./styles": "./styles/globals.css",
+    "./tailwind": "./tailwind.config.js"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
