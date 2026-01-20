@@ -1,0 +1,8 @@
+/* Retro-style Complete Import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import variables and base styles */
+@import './variables.css';
+@import './base.css';
