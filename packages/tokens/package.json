@@ -1,0 +1,32 @@
+{
+  "name": "@fermindi/retro-tokens",
+  "version": "0.1.0",
+  "description": "Design tokens for retro-style design system",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./css": "./dist/variables.css",
+    "./tailwind": {
+      "types": "./dist/tailwind.config.d.ts",
+      "import": "./dist/tailwind.config.js",
+      "require": "./dist/tailwind.config.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}

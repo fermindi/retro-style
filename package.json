@@ -1,32 +1,23 @@
 {
-  "name": "@fermindi/retro-style",
-  "version": "0.1.4",
+  "name": "retro-style-monorepo",
+  "version": "0.0.0",
+  "private": true,
   "description": "Retro/vintage design system inspired by classic computing hardware",
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fermindi/retro-style.git"
   },
   "scripts": {
-    "test": "echo \"No tests yet\""
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
   },
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [
-    "styles",
-    "tailwind.config.js",
-    "index.js",
-    "index.d.ts"
-  ],
-  "exports": {
-    "./styles": "./styles/index.css",
-    "./styles/variables": "./styles/variables.css",
-    "./styles/base": "./styles/base.css",
-    "./tailwind": "./tailwind.config.js"
+  "devDependencies": {
+    "prettier": "^3.2.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
   },
-  "peerDependencies": {
-    "tailwindcss": "^3.4.0"
-  }
+  "packageManager": "pnpm@9.15.0"
 }

@@ -1,58 +1,126 @@
 # Retro Style Design System
 
-Retro/vintage design system inspired by classic computing hardware (mechanical keyboards, beige terminals).
+A complete design system inspired by classic computing hardware - mechanical keyboards, beige terminals, and early computing aesthetics.
+
+## Packages
+
+| Package | Description | Version |
+|---------|-------------|---------|
+| `@fermindi/retro-tokens` | Design tokens (colors, typography, spacing) | 0.1.0 |
+| `@fermindi/retro-ui` | React component library | 0.1.0 |
 
 ## Installation
 
 ```bash
-npm install @fermindi/retro-style
+# Install both packages
+npm install @fermindi/retro-tokens @fermindi/retro-ui
+
+# Or with pnpm
+pnpm add @fermindi/retro-tokens @fermindi/retro-ui
 ```
 
-## Usage
+## Quick Start
 
-### Option 1: Full Import (with @tailwind directives)
+### 1. Import CSS tokens
 
-```tsx
-// Import everything (includes @tailwind directives)
-import '@fermindi/retro-style/styles';
-
-// Extend Tailwind config
-import baseConfig from '@fermindi/retro-style/tailwind';
-
-export default {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  presets: [baseConfig],
-};
-```
-
-### Option 2: Modular Import (recommended for Next.js)
-
-```tsx
-// In your globals.css
+```css
+/* In your globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-// Import only what you need
-@import '@fermindi/retro-style/styles/variables';
-@import '@fermindi/retro-style/styles/base';
+@import '@fermindi/retro-tokens/css';
 ```
+
+### 2. Configure Tailwind
 
 ```js
 // tailwind.config.js
-const retroPreset = require('@fermindi/retro-style/tailwind');
+import retroConfig from '@fermindi/retro-tokens/tailwind';
 
-module.exports = {
-  presets: [retroPreset],
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+export default {
+  presets: [retroConfig],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@fermindi/retro-ui/**/*.{js,ts,jsx,tsx}',
+  ],
 };
 ```
 
-## Color Palette
+### 3. Use Components
 
-- Warm beige backgrounds
-- Soft gray text
-- Vintage keycap-inspired buttons
-- No harsh black/white contrasts
+```tsx
+import { Button, Card, Input } from '@fermindi/retro-ui';
 
-Inspired by classic computing aesthetics.
+export function MyComponent() {
+  return (
+    <Card>
+      <Input placeholder="Enter text..." />
+      <Button variant="primary">Submit</Button>
+    </Card>
+  );
+}
+```
+
+## Components
+
+The `@fermindi/retro-ui` package includes:
+
+- **Button** - Multiple variants (default, primary, ghost, link, destructive)
+- **Input** - Text input with error states
+- **Textarea** - Multi-line text input
+- **Label** - Form labels
+- **Card** - Container with header, content, and footer
+- **Badge** - Status indicators
+- **Checkbox** - Toggle input
+- **Select** - Dropdown selection
+- **Dialog** - Modal dialogs
+- **DropdownMenu** - Context menus
+- **Separator** - Visual dividers
+
+## Design Philosophy
+
+- **Warm beige backgrounds** instead of harsh whites
+- **Soft gray text** for reduced eye strain
+- **Monospace typography** (Courier New) for authentic retro feel
+- **Minimal border radius** - boxy, retro aesthetic
+- **Subtle transitions** for modern usability
+- **Full accessibility** - focus rings, keyboard navigation, ARIA
+
+## Development
+
+This is a monorepo using pnpm workspaces and Turborepo.
+
+```bash
+# Install dependencies
+pnpm install
+
+# Build all packages
+pnpm build
+
+# Run docs site
+pnpm --filter docs dev
+```
+
+## Structure
+
+```
+retro-style/
+├── packages/
+│   ├── tokens/     # @fermindi/retro-tokens
+│   └── ui/         # @fermindi/retro-ui
+├── apps/
+│   └── docs/       # Documentation site
+└── package.json    # Root workspace
+```
+
+## Links
+
+- [Documentation](https://retro-style.vercel.app) (coming soon)
+- [GitHub](https://github.com/fermindi/retro-style)
+- [npm - tokens](https://www.npmjs.com/package/@fermindi/retro-tokens)
+- [npm - ui](https://www.npmjs.com/package/@fermindi/retro-ui)
+
+## License
+
+MIT

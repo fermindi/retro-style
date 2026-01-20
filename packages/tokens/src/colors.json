@@ -1,0 +1,34 @@
+{
+  "colors": {
+    "$type": "color",
+    "primitive": {
+      "beige-50": { "$value": "hsl(40 15% 96%)", "$description": "Lightest beige" },
+      "beige-100": { "$value": "hsl(40 15% 92%)", "$description": "Light beige - main background" },
+      "beige-200": { "$value": "hsl(38 20% 85%)", "$description": "Medium beige - input backgrounds" },
+      "beige-300": { "$value": "hsl(36 18% 78%)", "$description": "Darker beige" },
+      "gray-300": { "$value": "hsl(0 0% 75%)", "$description": "Light gray - muted elements" },
+      "gray-400": { "$value": "hsl(0 0% 65%)", "$description": "Medium gray - borders" },
+      "gray-500": { "$value": "hsl(0 0% 55%)", "$description": "Gray - secondary text" },
+      "gray-600": { "$value": "hsl(0 0% 45%)", "$description": "Dark gray - muted foreground" },
+      "gray-700": { "$value": "hsl(0 0% 35%)", "$description": "Darker gray - primary text" },
+      "gray-800": { "$value": "hsl(0 0% 25%)", "$description": "Darkest gray - accent" },
+      "white": { "$value": "hsl(0 0% 100%)", "$description": "Pure white" },
+      "black": { "$value": "hsl(0 0% 0%)", "$description": "Pure black" }
+    },
+    "semantic": {
+      "background": { "$value": "{colors.primitive.beige-100}", "$description": "Page background" },
+      "foreground": { "$value": "{colors.primitive.gray-700}", "$description": "Primary text" },
+      "border": { "$value": "{colors.primitive.gray-400}", "$description": "Default borders" },
+      "input": { "$value": "{colors.primitive.beige-200}", "$description": "Input backgrounds" },
+      "ring": { "$value": "{colors.primitive.gray-500}", "$description": "Focus ring" },
+      "muted": { "$value": "{colors.primitive.gray-300}", "$description": "Muted backgrounds" },
+      "muted-foreground": { "$value": "{colors.primitive.gray-600}", "$description": "Muted text" },
+      "accent": { "$value": "{colors.primitive.gray-800}", "$description": "Accent/primary actions" },
+      "accent-foreground": { "$value": "{colors.primitive.beige-100}", "$description": "Text on accent" },
+      "card": { "$value": "{colors.primitive.beige-50}", "$description": "Card backgrounds" },
+      "card-foreground": { "$value": "{colors.primitive.gray-700}", "$description": "Card text" },
+      "destructive": { "$value": "hsl(0 60% 45%)", "$description": "Error/destructive actions" },
+      "destructive-foreground": { "$value": "{colors.primitive.white}", "$description": "Text on destructive" }
+    }
+  }
+}

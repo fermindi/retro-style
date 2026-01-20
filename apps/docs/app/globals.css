@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import design tokens */
+@import '@fermindi/retro-tokens/css';
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--typography-fontFamily-mono);
+    background-color: var(--colors-semantic-background);
+    color: var(--colors-semantic-foreground);
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  /* Retro selection style */
+  ::selection {
+    background-color: var(--colors-semantic-foreground);
+    color: var(--colors-semantic-background);
+  }
+}

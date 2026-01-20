@@ -1,0 +1,13 @@
+{
+  "radius": {
+    "$type": "dimension",
+    "none": { "$value": "0", "$description": "No border radius" },
+    "sm": { "$value": "0.125rem", "$description": "2px - Small radius" },
+    "default": { "$value": "0.25rem", "$description": "4px - Default radius" },
+    "md": { "$value": "0.375rem", "$description": "6px - Medium radius" },
+    "lg": { "$value": "0.5rem", "$description": "8px - Large radius" },
+    "xl": { "$value": "0.75rem", "$description": "12px - Extra large radius" },
+    "2xl": { "$value": "1rem", "$description": "16px - 2x large radius" },
+    "full": { "$value": "9999px", "$description": "Fully rounded" }
+  }
+}
