@@ -78,6 +78,73 @@ The `@fermindi/retro-ui` package includes:
 - **DropdownMenu** - Context menus
 - **Separator** - Visual dividers
 
+## Migration from @fermindi/retro-style
+
+If you were using the old `@fermindi/retro-style` package, follow these steps:
+
+### 1. Update dependencies
+
+```bash
+# Remove old package
+npm uninstall @fermindi/retro-style
+
+# Install new packages
+npm install @fermindi/retro-tokens @fermindi/retro-ui
+```
+
+### 2. Update globals.css
+
+**Before:**
+```css
+@import '@fermindi/retro-style/styles';
+```
+
+**After:**
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fermindi/retro-tokens/css';
+```
+
+### 3. Update tailwind.config.js
+
+**Before:**
+```js
+import baseConfig from '@fermindi/retro-style/tailwind';
+
+export default {
+  presets: [baseConfig],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+};
+```
+
+**After:**
+```js
+import retroConfig from '@fermindi/retro-tokens/tailwind';
+
+export default {
+  presets: [retroConfig],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@fermindi/retro-ui/**/*.{js,ts,jsx,tsx}',
+  ],
+};
+```
+
+### 4. Use components (new!)
+
+Now you have ready-to-use components:
+
+```tsx
+import { Button, Input, Card, CardContent } from '@fermindi/retro-ui';
+
+// Instead of building your own, use:
+<Button variant="primary">Click me</Button>
+<Input placeholder="Type here..." />
+```
+
 ## Design Philosophy
 
 - **Warm beige backgrounds** instead of harsh whites
